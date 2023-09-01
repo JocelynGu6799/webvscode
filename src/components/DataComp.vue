@@ -179,7 +179,7 @@ export default {
 .point-chart {
   width: 48%;
   height: 450px;
-  background-color: rgb(175, 247, 177);
+  background-color: rgb(255, 255, 255);
   padding: 0px;
 
 }
