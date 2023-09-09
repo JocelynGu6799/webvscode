@@ -2,7 +2,7 @@
   <div class="chart-container">
     <div class="bar-chart"></div>
     <div class="pie-chart"></div>
-    <div class="point-chart"></div>
+    <!-- <div class="point-chart"></div> -->
   </div>
 </template>
 
