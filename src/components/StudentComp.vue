@@ -1,8 +1,12 @@
 <template>
   <div>
-    <h3>学生成绩列表</h3>
-    <el-button type="primary" @click="getStudentList">获取学生信息</el-button>
-    <el-button type="primary" @click="addStudent">新增</el-button>
+    <div class="box-top">
+      <div class="top-title"><span></span>学生成绩列表</div>
+      <div class="search-btn" @click="getStudentList">获取学生信息</div>
+      <div class="add-btn" @click="addStudent">新增</div>
+      <!-- <el-button type="primary" @click="getStudentList">获取学生信息</el-button>
+      <el-button type="primary" @click="addStudent">新增</el-button> -->
+    </div>
 
     <el-table :data="students_page" stripe style="width: 100%">
       <el-table-column prop="id" label="学号">
@@ -65,8 +69,9 @@
             <el-button type="primary" @click="handleRowEdit(scope.row)"
               >编辑</el-button
             >
-            <el-button type="danger" @click="handleRowDelete(scope.row)">删除</el-button>
-
+            <el-button type="danger" @click="handleRowDelete(scope.row)"
+              >删除</el-button
+            >
           </div>
         </template>
       </el-table-column>
@@ -179,7 +184,6 @@ export default {
       } else {
         this.handleRowUpdate(row);
       }
-      
     },
 
     handleRowCancel(row, index) {
@@ -208,9 +212,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.el-pagination {
-  justify-content: center;
-}
-</style>

@@ -1,8 +1,13 @@
 <template>
   <div>
-    <h3>学生成绩管理</h3>
+    <div class="box-top">
+      <div class="top-title"><span></span>课程列表</div>
+      <div class="search-btn" @click="getScoreList">获取学生成绩信息</div>
+      <div class="add-btn" @click="addScore">新增</div>
+    </div>
+    <!-- <h3>学生成绩管理</h3>
     <el-button type="primary" @click="getScoreList">获取学生成绩信息</el-button>
-    <el-button type="primary" @click="addScore">新增</el-button>
+    <el-button type="primary" @click="addScore">新增</el-button> -->
 
     <el-table :data="scores_page" stripe style="width: 100%">
       <el-table-column prop="id" label="学生学号">
@@ -113,9 +118,7 @@ export default {
         .then((res) => {
           console.log(res.data);
           // 如果删除成功，从数组中删除该学生
-          const index = this.scores.findIndex(
-            (score) => score.id === row.id
-          );
+          const index = this.scores.findIndex((score) => score.id === row.id);
           if (index !== -1) {
             this.scores.splice(index, 1);
           }
@@ -129,7 +132,7 @@ export default {
       this.scores.push({
         id: "",
         cid: "",
-        score:0,
+        score: 0,
         isEdit: true,
         isNew: true,
       });
