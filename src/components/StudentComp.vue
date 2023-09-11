@@ -110,7 +110,7 @@ export default {
 
     getStudentList() {
       axios
-        .get("http://localhost:8201/student")
+        .get("http://localhost:8180/student")
         .then((res) => {
           console.log(res.data);
           this.students = res.data;
@@ -123,7 +123,7 @@ export default {
     handleRowDelete(row) {
       console.log(row);
       axios
-        .delete("http://localhost:8201/deletestudent", { data: { id: row.id } })
+        .delete("http://localhost:8180/deletestudent", { data: { id: row.id } })
         .then((res) => {
           console.log(res.data);
           // 如果删除成功，从数组中删除该学生
@@ -153,7 +153,7 @@ export default {
     handleRowUpdate(row) {
       console.log(row);
       axios
-        .put("http://localhost:8201/updatestudent", row)
+        .put("http://localhost:8180/updatestudent", row)
         .then((res) => {
           console.log(res.data);
           row.isEdit = false;
@@ -166,7 +166,7 @@ export default {
     handleRowInsert(row) {
       console.log(row);
       axios
-        .post("http://localhost:8201/addstudent", row)
+        .post("http://localhost:8180/addstudent", row)
         .then((res) => {
           console.log(res.data);
           row.isEdit = false;
