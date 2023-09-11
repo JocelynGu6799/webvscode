@@ -2,6 +2,7 @@
   <div class="chart-container">
     <div class="bar-chart"></div>
     <div class="pie-chart"></div>
+
   </div>
 </template>
 
