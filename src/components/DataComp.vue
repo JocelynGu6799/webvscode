@@ -2,7 +2,7 @@
   <div class="chart-container">
     <div class="bar-chart"></div>
     <div class="pie-chart"></div>
-    <!-- <div class="point-chart"></div> -->
+
   </div>
 </template>
 
@@ -163,7 +163,7 @@ export default {
 .bar-chart {
   width: 48%;
   height: 450px;
-  background-color: aqua;
+
   
  
 }
@@ -171,18 +171,11 @@ export default {
 .pie-chart {
   width: 48%;
   height: 450px;
-  background-color: lightcoral;
   padding: 0px;
   
  
 }
-.point-chart {
-  width: 48%;
-  height: 450px;
-  background-color: rgb(255, 255, 255);
-  padding: 0px;
 
-}
 
 .y-axis text {
   font-size: 12px; /* 调整刻度标签的字体大小 */

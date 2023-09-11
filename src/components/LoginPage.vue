@@ -1,51 +1,47 @@
 <script setup>
-
-import { reactive ,ref} from "vue";
-import{User,Lock}from '@element-plus/icons-vue'
+import { reactive, ref } from "vue";
+import { User, Lock } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter(); // 导入和使用 Vue Router
 // import request from "@/utils/request";
 // import { ElMessage } from "element-plus";
 // import { useUserStore } from "@/stores/user";
-   const loginData=reactive({})
-   const rules=reactive({
-    username:[
-        {required:true,message:'请输入账号',trigger:'blur'},
-    ],
-    password:[
-        {required:true,message:'请输入密码',trigger:'blur'},
-        {min:3,max:20,message:'密码长度在3-20位',trigger:'blur'}
-    ]
-   })
-   const ruleFormRef=ref()
-   const login=()=>{
-    ruleFormRef.value.validate(valid =>{
-      // if(valid){
-      //   request.post('/login',loginData).then(res=>{
-      //     if(res.code==='200'){
-      //       ElMessage.success('登陆成功')
-      //       const userStore=useUserStore()
-      //       userStore.setManagerInfo(res.data)
-      //     }else{
-      //       ElMessage.error(res.msq)
-      //     }
-      //   })
+const loginData = reactive({});
+const rules = reactive({
+  username: [{ required: true, message: "请输入账号", trigger: "blur" }],
+  password: [
+    { required: true, message: "请输入密码", trigger: "blur" },
+    { min: 3, max: 20, message: "密码长度在3-20位", trigger: "blur" },
+  ],
+});
+const ruleFormRef = ref();
+const login = () => {
+  ruleFormRef.value.validate((valid) => {
+    // if(valid){
+    //   request.post('/login',loginData).then(res=>{
+    //     if(res.code==='200'){
+    //       ElMessage.success('登陆成功')
+    //       const userStore=useUserStore()
+    //       userStore.setManagerInfo(res.data)
+    //     }else{
+    //       ElMessage.error(res.msq)
+    //     }
+    //   })
 
-      // }
-      console.log(valid)
-    })
-    if(loginData.username==="admin"&&loginData.password==="123456"){
-      router.push("/main")
-    }else{alert("用户名或密码错误")}
-    
-   }
-   
+    // }
+    console.log(valid);
+  });
+  if (loginData.username === "admin" && loginData.password === "123456") {
+    router.push("/main");
+  } else {
+    alert("用户名或密码错误");
+  }
+};
 </script>
 
-
 <template>
-     <div class="login-body">
+  <div class="login-body">
     <div class="login-container">
       <div class="head">
         <!-- <img
@@ -70,14 +66,14 @@ const router = useRouter(); // 导入和使用 Vue Router
         :model="loginData"
         ref="ruleFormRef"
         class="login-form"
-        
       >
         <el-form-item label="账号" prop="username">
           <el-input
             type="text"
             v-model.trim="loginData.username"
             autocomplete="off"
-            placeholder="请输入账号" :prefix-icon="User"
+            placeholder="请输入账号"
+            :prefix-icon="User"
           ></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
@@ -85,7 +81,8 @@ const router = useRouter(); // 导入和使用 Vue Router
             type="password"
             v-model.trim="loginData.password"
             autocomplete="off"
-            placeholder="请输入密码" :prefix-icon="Lock"
+            placeholder="请输入密码"
+            :prefix-icon="Lock"
           ></el-input>
         </el-form-item>
         <el-form-item>
@@ -98,20 +95,22 @@ const router = useRouter(); // 导入和使用 Vue Router
     </div>
   </div>
 </template>
+
 <style scoped>
 .login-body {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: #fff;
+  height: 100%;
+  /* background-color: #fff; */
   /* background-image: url("../assets/bg.jpg"); */
 }
 .login-container {
   width: 420px;
   height: 440px;
   background-color: #fff;
-  border-radius: 4px;
+  border-radius: 20px;
   box-shadow: 0px 21px 41px 0px rgba(0, 0, 0, 0.2);
 }
 .head {
